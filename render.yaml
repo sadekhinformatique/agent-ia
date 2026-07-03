@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: naiom-backend
+    runtime: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    rootDir: backend
+    envVars:
+      - key: LINKEDIN_API_KEY
+        sync: false
+      - key: YOUTUBE_API_KEY
+        sync: false
+      - key: INSTAGRAM_API_KEY
+        sync: false
+      - key: TIKTOK_API_KEY
+        sync: false
+      - key: CANVA_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: IDEOGRAM_API_KEY
+        sync: false
+      - key: MIDJOURNEY_API_KEY
+        sync: false

@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-naiom-black: #0A0A0A;
+  --color-naiom-purple: #6C63FF;
+  --color-naiom-teal: #00D4AA;
+  --color-naiom-text: #F5F5F5;
+  --color-naiom-bg: #121212;
+}
