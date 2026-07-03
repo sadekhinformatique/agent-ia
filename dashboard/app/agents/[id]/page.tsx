@@ -34,8 +34,9 @@ const agentsData: Record<string, { name: string; role: string; model: string; fr
   },
 };
 
-export default function AgentPage({ params }: { params: { id: string } }) {
-  const agent = agentsData[params.id];
+export default async function AgentPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const agent = agentsData[id];
   if (!agent) notFound();
 
   return (

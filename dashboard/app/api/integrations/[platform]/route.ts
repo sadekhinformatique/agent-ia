@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextRequest, { params }: { params: { platform: string } }) {
+export async function POST(req: NextRequest, { params }: { params: Promise<{ platform: string }> }) {
+  const { platform } = await params;
   const { action } = await req.json();
-  // TODO: synchro vers Gmail, YouTube, Drive, Fireflies
-  return NextResponse.json({ platform: params.platform, action, status: "synced" });
+  return NextResponse.json({ platform, action, status: "synced" });
 }
