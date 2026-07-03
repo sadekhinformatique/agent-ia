@@ -1,12 +1,9 @@
 services:
   - type: web
     name: naiom-backend
-    runtime: python
+    runtime: docker
     region: frankfurt
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-    rootDir: backend
     envVars:
       - key: LINKEDIN_API_KEY
         sync: false
